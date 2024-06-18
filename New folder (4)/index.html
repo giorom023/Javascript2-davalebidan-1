@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Equation Solver</title>
+</head>
+<body>
+    <h1>Solve Linear Equations</h1>
+    <form id="equationForm">
+        <label for="a1">a1:</label>
+        <input type="text" id="a1"><br>
+        <label for="b1">b1:</label>
+        <input type="text" id="b1"><br>
+        <label for="c1">c1:</label>
+        <input type="text" id="c1"><br><br>
+        <label for="a2">a2:</label>
+        <input type="text" id="a2"><br>
+        <label for="b2">b2:</label>
+        <input type="text" id="b2"><br>
+        <label for="c2">c2:</label>
+        <input type="text" id="c2"><br>
+    </form>
+    <button type="button" onclick="solveEquations()">Solve</button>
+    <p id="x1Result"></p>
+    <p id="x2Result"></p>
+    <script>
+        function solveEquations() {
+            let a1 = parseFloat(document.getElementById('a1').value);
+            let b1 = parseFloat(document.getElementById('b1').value);
+            let c1 = parseFloat(document.getElementById('c1').value);
+            let a2 = parseFloat(document.getElementById('a2').value);
+            let b2 = parseFloat(document.getElementById('b2').value);
+            let c2 = parseFloat(document.getElementById('c2').value);
+
+            let x1 = (c1 * b2 - c2 * b1) / (a1 * b2 - a2 * b1);
+            let x2 = (a1 * c2 - a2 * c1) / (a1 * b2 - a2 * b1);
+
+            document.getElementById("x1Result").textContent = "X1 = " + x1;
+            document.getElementById("x2Result").textContent = "X2 = " + x2;
+        }
+    </script>
+</body>
+</html>
